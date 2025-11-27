@@ -12,6 +12,9 @@
     "prisma:generate": "npx prisma generate",
     "prisma:studio": "npx prisma studio"
   },
+  "prisma": {
+    "seed": "ts-node --transpile-only prisma/seed.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brunoramossilva/sgmp-api.git"
@@ -25,11 +28,11 @@
   },
   "homepage": "https://github.com/brunoramossilva/sgmp-api#readme",
   "dependencies": {
-    "@prisma/client": "^6.17.0",
+    "@prisma/client": "6.17.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "prisma": "^6.17.0"
+    "prisma": "6.17.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
