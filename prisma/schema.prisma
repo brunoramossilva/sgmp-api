@@ -1,15 +1,69 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+}
+
+enum Papel {
+  MORADOR
+  FUNCIONARIO
+  SINDICO
+}
+
+model Usuario {
+  cpf   String @id @db.Char(11)
+  senha String
+  papel Papel
+
+  morador     Morador?
+  funcionario Funcionario?
+  sindico     Sindico?
+}
+
+model Morador {
+  cpf      String @id @db.Char(11)
+  nome     String
+  telefone String @db.Char(11)
+
+  usuario Usuario @relation(fields: [cpf], references: [cpf])
+
+  ordens OrdemServico[]
+}
+
+model Funcionario {
+  cpf      String @id @db.Char(11)
+  nome     String
+  telefone String @db.Char(11)
+
+  usuario Usuario @relation(fields: [cpf], references: [cpf])
+
+  ordensExecutadas OrdemServico[]
+}
+
+model Sindico {
+  cpf_sindico String @id @db.Char(11)
+
+  usuario Usuario @relation(fields: [cpf_sindico], references: [cpf])
+
+  ordensAprovadas OrdemServico[]
+}
+
+model OrdemServico {
+  id            Int       @id @default(autoincrement())
+  descricao     String
+  dataAbertura  DateTime  @default(now())
+  dataConclusao DateTime?
+  status        String    @default("ABERTA")
+  aprovado      Boolean   @default(false)
+
+  cpf_morador String
+  morador     Morador @relation(fields: [cpf_morador], references: [cpf])
+
+  cpf_sindico String?
+  sindico     Sindico? @relation(fields: [cpf_sindico], references: [cpf_sindico])
+
+  cpf_funcionario String?
+  executor        Funcionario? @relation(fields: [cpf_funcionario], references: [cpf])
 }
