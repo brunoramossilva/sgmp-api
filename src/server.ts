@@ -29,4 +29,19 @@ async function start() {
   }
 }
 
+app.get("/db-test", async (req, res) => {
+  try {
+    await prisma.$queryRaw`SELECT 1`;
+    res.json({ status: "ok", message: "Banco respondeu normalmente!" });
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        status: "erro",
+        message: "Falha ao comunicar com o banco",
+        error,
+      });
+  }
+});
+
 start();
