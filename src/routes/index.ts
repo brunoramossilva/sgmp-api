@@ -1,4 +1,5 @@
 import { Router } from "express";
+import authRoutes from "./authRoutes";
 import userRoutes from "./usuarioRoutes";
 import moradorRoutes from "./moradorRoutes";
 import funcionarioRoutes from "./funcionarioRoutes";
@@ -7,6 +8,7 @@ import ordemServicoRoutes from "./ordemServicoRoutes";
 
 const router = Router();
 
+router.use("/auth", authRoutes);
 router.use("/usuarios", userRoutes);
 router.use("/moradores", moradorRoutes);
 router.use("/funcionarios", funcionarioRoutes);
