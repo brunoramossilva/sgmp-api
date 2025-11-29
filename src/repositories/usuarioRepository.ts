@@ -1,6 +1,5 @@
-import { PrismaClient, Papel } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { Papel } from "@prisma/client";
+import prisma from "../prisma";
 
 export class UsuarioRepository {
   create(data: { cpf: string; senha: string; papel: Papel }) {

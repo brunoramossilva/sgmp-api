@@ -1,6 +1,4 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "../prisma";
 
 export class SindicoRepository {
   create(data: { cpf_sindico: string }) {
