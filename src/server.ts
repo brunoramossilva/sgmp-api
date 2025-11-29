@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import prisma from "./prisma";
+import routes from "./routes";
 
 dotenv.config();
 
@@ -14,6 +15,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({ message: "API funcionando!" });
 });
+
+app.use(routes);
 
 async function start() {
   try {
@@ -34,13 +37,11 @@ app.get("/db-test", async (req, res) => {
     await prisma.$queryRaw`SELECT 1`;
     res.json({ status: "ok", message: "Banco respondeu normalmente!" });
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        status: "erro",
-        message: "Falha ao comunicar com o banco",
-        error,
-      });
+    res.status(500).json({
+      status: "erro",
+      message: "Falha ao comunicar com o banco",
+      error,
+    });
   }
 });
 
