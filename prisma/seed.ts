@@ -121,6 +121,48 @@ async function main() {
         status: "PENDENTE_APROVACAO",
         dataAbertura: new Date("2025-12-11"),
       },
+      {
+        descricao: "Dedetização das áreas comuns",
+        cpf_morador: "99999999999",
+        status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-06"),
+      },
+      {
+        descricao: "Verificar sistema de aquecimento da piscina",
+        cpf_morador: "10101010101",
+        status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-11-29"),
+      },
+      {
+        descricao: "Reparar fissura no teto da garagem",
+        cpf_morador: "12121212121",
+        status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-05"),
+      },
+      {
+        descricao: "Trocar vidro quebrado da porta de entrada",
+        cpf_morador: "13131313131",
+        status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-10"),
+      },
+      {
+        descricao: "Instalar sensor de presença no corredor",
+        cpf_morador: "14141414141",
+        status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-09"),
+      },
+      {
+        descricao: "Limpar reservatório de água",
+        cpf_morador: "15151515151",
+        status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-03"),
+      },
+      {
+        descricao: "Consertar campainha do apartamento 205",
+        cpf_morador: "16161616161",
+        status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-11"),
+      },
 
       // Ordens aprovadas aguardando execução
       {
@@ -157,6 +199,27 @@ async function main() {
         cpf_sindico: "31313131313",
         status: "AGUARDANDO_EXECUCAO",
         dataAbertura: new Date("2025-12-05"),
+      },
+      {
+        descricao: "Trocar maçaneta da porta do salão de festas",
+        cpf_morador: "11111111111",
+        cpf_sindico: "30303030303",
+        status: "AGUARDANDO_EXECUCAO",
+        dataAbertura: new Date("2025-11-27"),
+      },
+      {
+        descricao: "Verificar vazamento no telhado",
+        cpf_morador: "22222222222",
+        cpf_sindico: "31313131313",
+        status: "AGUARDANDO_EXECUCAO",
+        dataAbertura: new Date("2025-12-02"),
+      },
+      {
+        descricao: "Instalar novo bebedouro na área comum",
+        cpf_morador: "33333333333",
+        cpf_sindico: "30303030303",
+        status: "AGUARDANDO_EXECUCAO",
+        dataAbertura: new Date("2025-11-30"),
       },
 
       // Ordens em execução
@@ -273,50 +336,6 @@ async function main() {
         status: "CONCLUIDA",
         dataAbertura: new Date("2025-11-27"),
         dataConclusao: new Date("2025-12-02"),
-      },
-
-      // Mais ordens pendentes de aprovação
-      {
-        descricao: "Dedetização das áreas comuns",
-        cpf_morador: "99999999999",
-        status: "PENDENTE_APROVACAO",
-        dataAbertura: new Date("2025-12-06"),
-      },
-      {
-        descricao: "Verificar sistema de aquecimento da piscina",
-        cpf_morador: "10101010101",
-        status: "PENDENTE_APROVACAO",
-        dataAbertura: new Date("2025-11-29"),
-      },
-      {
-        descricao: "Reparar fissura no teto da garagem",
-        cpf_morador: "12121212121",
-        status: "PENDENTE_APROVACAO",
-        dataAbertura: new Date("2025-12-05"),
-      },
-      {
-        descricao: "Trocar vidro quebrado da porta de entrada",
-        cpf_morador: "13131313131",
-        status: "PENDENTE_APROVACAO",
-        dataAbertura: new Date("2025-12-10"),
-      },
-      {
-        descricao: "Instalar sensor de presença no corredor",
-        cpf_morador: "14141414141",
-        status: "PENDENTE_APROVACAO",
-        dataAbertura: new Date("2025-12-09"),
-      },
-      {
-        descricao: "Limpar reservatório de água",
-        cpf_morador: "15151515151",
-        status: "PENDENTE_APROVACAO",
-        dataAbertura: new Date("2025-12-03"),
-      },
-      {
-        descricao: "Consertar campainha do apartamento 205",
-        cpf_morador: "16161616161",
-        status: "PENDENTE_APROVACAO",
-        dataAbertura: new Date("2025-12-11"),
       },
 
       // Ordens recusadas pelo síndico
