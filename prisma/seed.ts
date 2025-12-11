@@ -95,26 +95,31 @@ async function main() {
         descricao: "Trocar lâmpada queimada no corredor do 3º andar",
         cpf_morador: "11111111111",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-09"),
       },
       {
         descricao: "Consertar vazamento na caixa d'água",
         cpf_morador: "22222222222",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-08"),
       },
       {
         descricao: "Reparar porta da garagem que está travando",
         cpf_morador: "33333333333",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-10"),
       },
       {
         descricao: "Limpar calhas do prédio",
         cpf_morador: "44444444444",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-07"),
       },
       {
         descricao: "Trocar fechadura do portão principal",
         cpf_morador: "55555555555",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-11"),
       },
 
       // Ordens aprovadas aguardando execução
@@ -123,30 +128,35 @@ async function main() {
         cpf_morador: "66666666666",
         cpf_sindico: "30303030303",
         status: "AGUARDANDO_EXECUCAO",
+        dataAbertura: new Date("2025-12-01"),
       },
       {
         descricao: "Instalar nova luminária na entrada",
         cpf_morador: "77777777777",
         cpf_sindico: "30303030303",
         status: "AGUARDANDO_EXECUCAO",
+        dataAbertura: new Date("2025-11-28"),
       },
       {
         descricao: "Consertar interfone do apartamento 301",
         cpf_morador: "88888888888",
         cpf_sindico: "31313131313",
         status: "AGUARDANDO_EXECUCAO",
+        dataAbertura: new Date("2025-12-03"),
       },
       {
         descricao: "Substituir tomadas antigas da área comum",
         cpf_morador: "99999999999",
         cpf_sindico: "30303030303",
         status: "AGUARDANDO_EXECUCAO",
+        dataAbertura: new Date("2025-11-25"),
       },
       {
         descricao: "Reparar rachadura na parede externa",
         cpf_morador: "10101010101",
         cpf_sindico: "31313131313",
         status: "AGUARDANDO_EXECUCAO",
+        dataAbertura: new Date("2025-12-05"),
       },
 
       // Ordens em execução
@@ -156,6 +166,7 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "20202020202",
         status: "EM_EXECUCAO",
+        dataAbertura: new Date("2025-11-22"),
       },
       {
         descricao: "Consertar torneira com vazamento no térreo",
@@ -163,6 +174,7 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "21212121212",
         status: "EM_EXECUCAO",
+        dataAbertura: new Date("2025-11-30"),
       },
       {
         descricao: "Reparar motor do portão automático",
@@ -170,6 +182,7 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "23232323232",
         status: "EM_EXECUCAO",
+        dataAbertura: new Date("2025-12-02"),
       },
       {
         descricao: "Instalar câmera de segurança adicional",
@@ -177,6 +190,7 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "24242424242",
         status: "EM_EXECUCAO",
+        dataAbertura: new Date("2025-11-20"),
       },
       {
         descricao: "Limpar caixa de gordura",
@@ -184,6 +198,7 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "25252525252",
         status: "EM_EXECUCAO",
+        dataAbertura: new Date("2025-12-04"),
       },
 
       // Ordens concluídas
@@ -193,7 +208,8 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "20202020202",
         status: "CONCLUIDA",
-        dataConclusao: new Date("2025-11-20"),
+        dataAbertura: new Date("2025-08-10"),
+        dataConclusao: new Date("2025-08-15"),
       },
       {
         descricao: "Manutenção preventiva do elevador",
@@ -201,7 +217,8 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "21212121212",
         status: "CONCLUIDA",
-        dataConclusao: new Date("2025-11-21"),
+        dataAbertura: new Date("2025-08-28"),
+        dataConclusao: new Date("2025-09-03"),
       },
       {
         descricao: "Desentupimento de ralo da área de serviço",
@@ -209,7 +226,8 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "23232323232",
         status: "CONCLUIDA",
-        dataConclusao: new Date("2025-11-22"),
+        dataAbertura: new Date("2025-09-25"),
+        dataConclusao: new Date("2025-09-28"),
       },
       {
         descricao: "Pintura das grades da varanda",
@@ -217,7 +235,8 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "24242424242",
         status: "CONCLUIDA",
-        dataConclusao: new Date("2025-11-23"),
+        dataAbertura: new Date("2025-10-05"),
+        dataConclusao: new Date("2025-10-12"),
       },
       {
         descricao: "Instalação de corrimão na escada",
@@ -225,7 +244,8 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "25252525252",
         status: "CONCLUIDA",
-        dataConclusao: new Date("2025-11-24"),
+        dataAbertura: new Date("2025-10-18"),
+        dataConclusao: new Date("2025-10-25"),
       },
       {
         descricao: "Reparo na rede elétrica do salão de festas",
@@ -233,7 +253,8 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "20202020202",
         status: "CONCLUIDA",
-        dataConclusao: new Date("2025-11-25"),
+        dataAbertura: new Date("2025-10-30"),
+        dataConclusao: new Date("2025-11-05"),
       },
       {
         descricao: "Troca de telhas danificadas",
@@ -241,7 +262,8 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "21212121212",
         status: "CONCLUIDA",
-        dataConclusao: new Date("2025-11-26"),
+        dataAbertura: new Date("2025-11-10"),
+        dataConclusao: new Date("2025-11-18"),
       },
       {
         descricao: "Conserto do porteiro eletrônico",
@@ -249,7 +271,8 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "23232323232",
         status: "CONCLUIDA",
-        dataConclusao: new Date("2025-11-27"),
+        dataAbertura: new Date("2025-11-27"),
+        dataConclusao: new Date("2025-12-02"),
       },
 
       // Mais ordens pendentes de aprovação
@@ -257,36 +280,43 @@ async function main() {
         descricao: "Dedetização das áreas comuns",
         cpf_morador: "99999999999",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-06"),
       },
       {
         descricao: "Verificar sistema de aquecimento da piscina",
         cpf_morador: "10101010101",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-11-29"),
       },
       {
         descricao: "Reparar fissura no teto da garagem",
         cpf_morador: "12121212121",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-05"),
       },
       {
         descricao: "Trocar vidro quebrado da porta de entrada",
         cpf_morador: "13131313131",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-10"),
       },
       {
         descricao: "Instalar sensor de presença no corredor",
         cpf_morador: "14141414141",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-09"),
       },
       {
         descricao: "Limpar reservatório de água",
         cpf_morador: "15151515151",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-03"),
       },
       {
         descricao: "Consertar campainha do apartamento 205",
         cpf_morador: "16161616161",
         status: "PENDENTE_APROVACAO",
+        dataAbertura: new Date("2025-12-11"),
       },
 
       // Ordens recusadas pelo síndico
@@ -295,36 +325,42 @@ async function main() {
         cpf_morador: "11111111111",
         cpf_sindico: "30303030303",
         status: "RECUSADA",
+        dataAbertura: new Date("2025-10-15"),
       },
       {
         descricao: "Colocar piso de mármore na entrada",
         cpf_morador: "22222222222",
         cpf_sindico: "31313131313",
         status: "RECUSADA",
+        dataAbertura: new Date("2025-09-20"),
       },
       {
         descricao: "Construir churrasqueira na varanda do apartamento",
         cpf_morador: "33333333333",
         cpf_sindico: "30303030303",
         status: "RECUSADA",
+        dataAbertura: new Date("2025-11-05"),
       },
       {
         descricao: "Pintar fachada do prédio de vermelho",
         cpf_morador: "44444444444",
         cpf_sindico: "31313131313",
         status: "RECUSADA",
+        dataAbertura: new Date("2025-10-22"),
       },
       {
         descricao: "Ampliar vaga de garagem sem autorização",
         cpf_morador: "55555555555",
         cpf_sindico: "30303030303",
         status: "RECUSADA",
+        dataAbertura: new Date("2025-11-12"),
       },
       {
         descricao: "Instalar antena parabólica gigante no telhado",
         cpf_morador: "66666666666",
         cpf_sindico: "31313131313",
         status: "RECUSADA",
+        dataAbertura: new Date("2025-09-08"),
       },
     ],
   });
