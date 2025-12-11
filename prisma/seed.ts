@@ -289,42 +289,42 @@ async function main() {
         status: "PENDENTE_APROVACAO",
       },
 
-      // Ordens reprovadas pelo síndico
+      // Ordens recusadas pelo síndico
       {
         descricao: "Instalar sauna no salão de festas",
         cpf_morador: "11111111111",
         cpf_sindico: "30303030303",
-        status: "REPROVADA",
+        status: "RECUSADA",
       },
       {
         descricao: "Colocar piso de mármore na entrada",
         cpf_morador: "22222222222",
         cpf_sindico: "31313131313",
-        status: "REPROVADA",
+        status: "RECUSADA",
       },
       {
         descricao: "Construir churrasqueira na varanda do apartamento",
         cpf_morador: "33333333333",
         cpf_sindico: "30303030303",
-        status: "REPROVADA",
+        status: "RECUSADA",
       },
       {
         descricao: "Pintar fachada do prédio de vermelho",
         cpf_morador: "44444444444",
         cpf_sindico: "31313131313",
-        status: "REPROVADA",
+        status: "RECUSADA",
       },
       {
         descricao: "Ampliar vaga de garagem sem autorização",
         cpf_morador: "55555555555",
         cpf_sindico: "30303030303",
-        status: "REPROVADA",
+        status: "RECUSADA",
       },
       {
         descricao: "Instalar antena parabólica gigante no telhado",
         cpf_morador: "66666666666",
         cpf_sindico: "31313131313",
-        status: "REPROVADA",
+        status: "RECUSADA",
       },
     ],
   });

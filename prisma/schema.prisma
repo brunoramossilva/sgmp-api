@@ -18,7 +18,7 @@ enum StatusOrdemServico {
   AGUARDANDO_EXECUCAO
   EM_EXECUCAO
   CONCLUIDA
-  REPROVADA
+  RECUSADA
 }
 
 model Usuario {
@@ -60,9 +60,9 @@ model Sindico {
 }
 
 model OrdemServico {
-  id            Int @id @default(autoincrement())
+  id            Int                @id @default(autoincrement())
   descricao     String
-  dataAbertura  DateTime @default(now())
+  dataAbertura  DateTime           @default(now())
   dataConclusao DateTime?
   status        StatusOrdemServico @default(PENDENTE_APROVACAO)
 
@@ -73,5 +73,5 @@ model OrdemServico {
   sindico     Sindico? @relation(fields: [cpf_sindico], references: [cpf_sindico])
 
   cpf_funcionario String?
-  executor Funcionario? @relation(fields: [cpf_funcionario], references: [cpf])
+  executor        Funcionario? @relation(fields: [cpf_funcionario], references: [cpf])
 }
