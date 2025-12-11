@@ -1,4 +1,5 @@
 import prisma from "../prisma";
+import { Prisma } from "@prisma/client";
 
 export class OrdemServicoRepository {
   create(data: { descricao: string; cpf_morador: string }) {
@@ -38,11 +39,7 @@ export class OrdemServicoRepository {
         },
         sindico: {
           include: {
-            usuario: {
-              include: {
-                morador: true,
-              },
-            },
+            usuario: true,
           },
         },
         executor: {
@@ -65,11 +62,7 @@ export class OrdemServicoRepository {
         },
         sindico: {
           include: {
-            usuario: {
-              include: {
-                morador: true,
-              },
-            },
+            usuario: true,
           },
         },
         executor: {
@@ -81,17 +74,7 @@ export class OrdemServicoRepository {
     });
   }
 
-  update(
-    id: number,
-    data: Partial<{
-      descricao: string;
-      dataConclusao: Date;
-      status: string;
-      aprovado: boolean;
-      cpf_sindico: string;
-      cpf_funcionario: string;
-    }>
-  ) {
+  update(id: number, data: Prisma.OrdemServicoUpdateInput) {
     return prisma.ordemServico.update({
       where: { id },
       data,
@@ -103,11 +86,7 @@ export class OrdemServicoRepository {
         },
         sindico: {
           include: {
-            usuario: {
-              include: {
-                morador: true,
-              },
-            },
+            usuario: true,
           },
         },
         executor: {

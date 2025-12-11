@@ -1,6 +1,9 @@
 -- CreateEnum
 CREATE TYPE "Papel" AS ENUM ('MORADOR', 'FUNCIONARIO', 'SINDICO');
 
+-- CreateEnum
+CREATE TYPE "StatusOrdemServico" AS ENUM ('PENDENTE_APROVACAO', 'AGUARDANDO_EXECUCAO', 'EM_EXECUCAO', 'CONCLUIDA', 'REPROVADA');
+
 -- CreateTable
 CREATE TABLE "Usuario" (
     "cpf" CHAR(11) NOT NULL,
@@ -41,8 +44,7 @@ CREATE TABLE "OrdemServico" (
     "descricao" TEXT NOT NULL,
     "dataAbertura" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "dataConclusao" TIMESTAMP(3),
-    "status" TEXT NOT NULL DEFAULT 'ABERTA',
-    "aprovado" BOOLEAN NOT NULL DEFAULT false,
+    "status" "StatusOrdemServico" NOT NULL DEFAULT 'PENDENTE_APROVACAO',
     "cpf_morador" TEXT NOT NULL,
     "cpf_sindico" TEXT,
     "cpf_funcionario" TEXT,

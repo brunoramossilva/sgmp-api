@@ -13,32 +13,32 @@ async function main() {
   await prisma.usuario.createMany({
     data: [
       // Moradores
-      { cpf: "11111111111", senha: "senha123", papel: "MORADOR" },
-      { cpf: "22222222222", senha: "senha123", papel: "MORADOR" },
-      { cpf: "33333333333", senha: "senha123", papel: "MORADOR" },
-      { cpf: "44444444444", senha: "senha123", papel: "MORADOR" },
-      { cpf: "55555555555", senha: "senha123", papel: "MORADOR" },
-      { cpf: "66666666666", senha: "senha123", papel: "MORADOR" },
-      { cpf: "77777777777", senha: "senha123", papel: "MORADOR" },
-      { cpf: "88888888888", senha: "senha123", papel: "MORADOR" },
-      { cpf: "99999999999", senha: "senha123", papel: "MORADOR" },
-      { cpf: "10101010101", senha: "senha123", papel: "MORADOR" },
-      { cpf: "12121212121", senha: "senha123", papel: "MORADOR" },
-      { cpf: "13131313131", senha: "senha123", papel: "MORADOR" },
-      { cpf: "14141414141", senha: "senha123", papel: "MORADOR" },
-      { cpf: "15151515151", senha: "senha123", papel: "MORADOR" },
-      { cpf: "16161616161", senha: "senha123", papel: "MORADOR" },
+      { cpf: "11111111111", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "22222222222", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "33333333333", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "44444444444", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "55555555555", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "66666666666", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "77777777777", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "88888888888", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "99999999999", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "10101010101", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "12121212121", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "13131313131", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "14141414141", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "15151515151", senha: "sgmp@2025", papel: "MORADOR" },
+      { cpf: "16161616161", senha: "sgmp@2025", papel: "MORADOR" },
 
       // Funcionários
-      { cpf: "20202020202", senha: "senha123", papel: "FUNCIONARIO" },
-      { cpf: "21212121212", senha: "senha123", papel: "FUNCIONARIO" },
-      { cpf: "23232323232", senha: "senha123", papel: "FUNCIONARIO" },
-      { cpf: "24242424242", senha: "senha123", papel: "FUNCIONARIO" },
-      { cpf: "25252525252", senha: "senha123", papel: "FUNCIONARIO" },
+      { cpf: "20202020202", senha: "sgmp@2025", papel: "FUNCIONARIO" },
+      { cpf: "21212121212", senha: "sgmp@2025", papel: "FUNCIONARIO" },
+      { cpf: "23232323232", senha: "sgmp@2025", papel: "FUNCIONARIO" },
+      { cpf: "24242424242", senha: "sgmp@2025", papel: "FUNCIONARIO" },
+      { cpf: "25252525252", senha: "sgmp@2025", papel: "FUNCIONARIO" },
 
       // Síndicos (também são moradores)
-      { cpf: "30303030303", senha: "senha123", papel: "SINDICO" },
-      { cpf: "31313131313", senha: "senha123", papel: "SINDICO" },
+      { cpf: "30303030303", senha: "sgmp@2025", papel: "SINDICO" },
+      { cpf: "31313131313", senha: "sgmp@2025", papel: "SINDICO" },
     ],
   });
 
@@ -90,36 +90,31 @@ async function main() {
   // Ordens de Serviço
   await prisma.ordemServico.createMany({
     data: [
-      // Ordens abertas aguardando aprovação
+      // Ordens pendentes de aprovação
       {
         descricao: "Trocar lâmpada queimada no corredor do 3º andar",
         cpf_morador: "11111111111",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Consertar vazamento na caixa d'água",
         cpf_morador: "22222222222",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Reparar porta da garagem que está travando",
         cpf_morador: "33333333333",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Limpar calhas do prédio",
         cpf_morador: "44444444444",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Trocar fechadura do portão principal",
         cpf_morador: "55555555555",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
 
       // Ordens aprovadas aguardando execução
@@ -127,36 +122,31 @@ async function main() {
         descricao: "Pintar parede da área de lazer",
         cpf_morador: "66666666666",
         cpf_sindico: "30303030303",
-        status: "APROVADA",
-        aprovado: true,
+        status: "AGUARDANDO_EXECUCAO",
       },
       {
         descricao: "Instalar nova luminária na entrada",
         cpf_morador: "77777777777",
         cpf_sindico: "30303030303",
-        status: "APROVADA",
-        aprovado: true,
+        status: "AGUARDANDO_EXECUCAO",
       },
       {
         descricao: "Consertar interfone do apartamento 301",
         cpf_morador: "88888888888",
         cpf_sindico: "31313131313",
-        status: "APROVADA",
-        aprovado: true,
+        status: "AGUARDANDO_EXECUCAO",
       },
       {
         descricao: "Substituir tomadas antigas da área comum",
         cpf_morador: "99999999999",
         cpf_sindico: "30303030303",
-        status: "APROVADA",
-        aprovado: true,
+        status: "AGUARDANDO_EXECUCAO",
       },
       {
         descricao: "Reparar rachadura na parede externa",
         cpf_morador: "10101010101",
         cpf_sindico: "31313131313",
-        status: "APROVADA",
-        aprovado: true,
+        status: "AGUARDANDO_EXECUCAO",
       },
 
       // Ordens em execução
@@ -166,7 +156,6 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "20202020202",
         status: "EM_EXECUCAO",
-        aprovado: true,
       },
       {
         descricao: "Consertar torneira com vazamento no térreo",
@@ -174,7 +163,6 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "21212121212",
         status: "EM_EXECUCAO",
-        aprovado: true,
       },
       {
         descricao: "Reparar motor do portão automático",
@@ -182,7 +170,6 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "23232323232",
         status: "EM_EXECUCAO",
-        aprovado: true,
       },
       {
         descricao: "Instalar câmera de segurança adicional",
@@ -190,7 +177,6 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "24242424242",
         status: "EM_EXECUCAO",
-        aprovado: true,
       },
       {
         descricao: "Limpar caixa de gordura",
@@ -198,7 +184,6 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "25252525252",
         status: "EM_EXECUCAO",
-        aprovado: true,
       },
 
       // Ordens concluídas
@@ -208,7 +193,6 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "20202020202",
         status: "CONCLUIDA",
-        aprovado: true,
         dataConclusao: new Date("2025-11-20"),
       },
       {
@@ -217,7 +201,6 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "21212121212",
         status: "CONCLUIDA",
-        aprovado: true,
         dataConclusao: new Date("2025-11-21"),
       },
       {
@@ -226,7 +209,6 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "23232323232",
         status: "CONCLUIDA",
-        aprovado: true,
         dataConclusao: new Date("2025-11-22"),
       },
       {
@@ -235,7 +217,6 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "24242424242",
         status: "CONCLUIDA",
-        aprovado: true,
         dataConclusao: new Date("2025-11-23"),
       },
       {
@@ -244,7 +225,6 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "25252525252",
         status: "CONCLUIDA",
-        aprovado: true,
         dataConclusao: new Date("2025-11-24"),
       },
       {
@@ -253,7 +233,6 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "20202020202",
         status: "CONCLUIDA",
-        aprovado: true,
         dataConclusao: new Date("2025-11-25"),
       },
       {
@@ -262,7 +241,6 @@ async function main() {
         cpf_sindico: "30303030303",
         cpf_funcionario: "21212121212",
         status: "CONCLUIDA",
-        aprovado: true,
         dataConclusao: new Date("2025-11-26"),
       },
       {
@@ -271,52 +249,82 @@ async function main() {
         cpf_sindico: "31313131313",
         cpf_funcionario: "23232323232",
         status: "CONCLUIDA",
-        aprovado: true,
         dataConclusao: new Date("2025-11-27"),
       },
 
-      // Mais ordens abertas
+      // Mais ordens pendentes de aprovação
       {
         descricao: "Dedetização das áreas comuns",
         cpf_morador: "99999999999",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Verificar sistema de aquecimento da piscina",
         cpf_morador: "10101010101",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Reparar fissura no teto da garagem",
         cpf_morador: "12121212121",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Trocar vidro quebrado da porta de entrada",
         cpf_morador: "13131313131",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Instalar sensor de presença no corredor",
         cpf_morador: "14141414141",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Limpar reservatório de água",
         cpf_morador: "15151515151",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
       },
       {
         descricao: "Consertar campainha do apartamento 205",
         cpf_morador: "16161616161",
-        status: "ABERTA",
-        aprovado: false,
+        status: "PENDENTE_APROVACAO",
+      },
+
+      // Ordens reprovadas pelo síndico
+      {
+        descricao: "Instalar sauna no salão de festas",
+        cpf_morador: "11111111111",
+        cpf_sindico: "30303030303",
+        status: "REPROVADA",
+      },
+      {
+        descricao: "Colocar piso de mármore na entrada",
+        cpf_morador: "22222222222",
+        cpf_sindico: "31313131313",
+        status: "REPROVADA",
+      },
+      {
+        descricao: "Construir churrasqueira na varanda do apartamento",
+        cpf_morador: "33333333333",
+        cpf_sindico: "30303030303",
+        status: "REPROVADA",
+      },
+      {
+        descricao: "Pintar fachada do prédio de vermelho",
+        cpf_morador: "44444444444",
+        cpf_sindico: "31313131313",
+        status: "REPROVADA",
+      },
+      {
+        descricao: "Ampliar vaga de garagem sem autorização",
+        cpf_morador: "55555555555",
+        cpf_sindico: "30303030303",
+        status: "REPROVADA",
+      },
+      {
+        descricao: "Instalar antena parabólica gigante no telhado",
+        cpf_morador: "66666666666",
+        cpf_sindico: "31313131313",
+        status: "REPROVADA",
       },
     ],
   });
