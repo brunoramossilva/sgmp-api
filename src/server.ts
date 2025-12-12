@@ -7,9 +7,10 @@ import routes from "./routes";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+const PORT: number = parseInt(process.env.PORT ?? "3000", 10);
+
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -18,24 +19,13 @@ app.get("/", (req, res) => {
 
 app.use(routes);
 
-async function start() {
-  try {
-    await prisma.$connect();
-    console.log("📦 Banco de dados conectado com sucesso!");
-
-    app.listen(PORT, () => {
-      console.log(`🚀 Servidor rodando na porta ${PORT}`);
-    });
-  } catch (error) {
-    console.error("❌ Erro ao conectar no banco:", error);
-    process.exit(1);
-  }
-}
-
 app.get("/db-test", async (req, res) => {
   try {
     await prisma.$queryRaw`SELECT 1`;
-    res.json({ status: "ok", message: "Banco respondeu normalmente!" });
+    res.json({
+      status: "ok",
+      message: "Banco respondeu normalmente!",
+    });
   } catch (error) {
     res.status(500).json({
       status: "erro",
@@ -44,5 +34,19 @@ app.get("/db-test", async (req, res) => {
     });
   }
 });
+
+async function start() {
+  try {
+    await prisma.$connect();
+    console.log("📦 Banco de dados conectado com sucesso!");
+
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`🚀 Servidor rodando em http://0.0.0.0:${PORT}`);
+    });
+  } catch (error) {
+    console.error("❌ Erro ao conectar no banco:", error);
+    process.exit(1);
+  }
+}
 
 start();
